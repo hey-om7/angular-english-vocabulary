@@ -14,9 +14,12 @@ export class AppComponent {
   word:string="Loading";
   meaning:string="Please wait while we collect and curate all the words";
   fetchedDataList:string[]=[""];
+  
 
   constructor(private http: HttpClient) { 
       this.fetchDataFromGit();
+     
+
   }
 
   httpurl:string="https://raw.githubusercontent.com/hey-om7/english-vocabulary/main/Printable/PrintReadyFile.txt";
@@ -51,7 +54,7 @@ export class AppComponent {
   getWord(){
     const current_element:string=this.fetchedDataList[this.currentIndex];
     const l2:string[]=current_element.split(":");
-    
+
     //assigning meaningHead
     let meaningHead:string=l2[0].split(".)")[1].trim();
     meaningHead=meaningHead[0].toUpperCase()+meaningHead.substring(1,);

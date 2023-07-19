@@ -1,7 +1,88 @@
 <div class="container">
-  <h1>{{word}}</h1>
-  <p>{{meaning}}</p>
+  <div class="wordtext d-flex justify-content-center">
+    <h1  >{{word}}</h1>
 
-  <button (click)="buttonPrevPress()">Previous</button>
-<button (click)="buttonNextPress()">Next</button>
+  </div>
+  <p class="wordmeaning d-flex justify-content-center" >{{meaning}}</p>
+<div class="buttoncontainer d-flex justify-content-center">
+  <button class="btn gradient-button btn-lg" (click)="buttonNextPress()">Next</button>
+  <button class="btn custom-button" (click)="buttonPrevPress()">Previous</button>
 </div>
+<div class="imgcontainer-playingcode d-flex justify-content-center">
+
+  <img src="./assets/PlayingCode.png" alt="PlayingCode" oncontextmenu="return false;" draggable="false">
+</div>
+<!-- <p class="playingcode d-flex justify-content-center">PlayingCode</p> -->
+</div>
+
+<style>
+  .container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; 
+  }
+  .wordtext{
+    
+    /* background-color: rebeccapurple; */
+    /* flex: 2;
+     */
+     display: flex;
+  flex-direction: column;
+    height: 40vh;
+
+  }
+  .custom-button {
+    background-color: rgba(0, 255, 0, 0);
+    color: #000000;
+    /* Add any additional styles as needed */
+  }
+  .gradient-button {
+    background-image: linear-gradient(to right bottom, #7D6B6B, #841313);
+    color: #ffffff;
+  }
+  h1{
+    color: black;
+    font-weight: 900;
+    font-size: clamp(50px,8vw + 1rem,100px);
+    text-align: center;
+  }
+  .container .wordmeaning{
+    font-size: clamp(20px,4vw,45px);
+    opacity: 0.5;
+    text-align: center;
+    display: flex;
+  flex-direction: column;
+  height: 30vh;
+  }
+  .container .imgcontainer-playingcode{
+    opacity: 0.2;
+    /* height: 20vh; */
+    /* background-color: blue; */
+    align-items: end;
+    margin-bottom: 10px;
+
+  
+  }
+  img{
+  width: 150px;
+  
+  align-items: end;
+}
+
+  .buttoncontainer{
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    /* background-color: blue; */
+  }
+
+  button {
+  margin-bottom: 10px;
+  /* width: 350px; */
+  
+}
+
+  
+</style>
+
